@@ -1,0 +1,273 @@
+====================================================================================================================
+
+<html>
+<head>
+	<title>Funcao alert</title>
+<script type=text/javascript>
+	alert ("Hello World!");
+	alert ("Ok, ja ficou chato... rsrs!");
+</script>
+</head>
+<body>
+		<h1>Exemplo Javascript</h1>
+</body>
+</html>
+
+
+====================================================================================================================
+<html>
+<head>
+	<title>Operacoes aritmeticas</title>
+<script type=text/javascript>
+	var nome = "Rigel";
+	var mes = 08;
+	//operações aritméticas:
+	var x = 10 + 10;
+	var y = 20 - 10;
+	var z = 2 * 10
+	var j = 10 / 2;
+	var n1 = window.prompt('numero1:');
+	var n2 = window.prompt('numero2:');
+	resultado = parseInt(n1) + parseInt(n2);
+	alert("o resultado da multiplicacao foi: " + resultado)
+	
+		//alert(j);
+	//concatenando:
+	//alert(nome + ", no mes " + mes);
+</script>
+</head>
+<body>
+		<h1>Variaveis</h1>
+</body>
+</html>
+
+====================================================================================================================
+
+<html>
+<head>
+	<title>If</title>
+<script type=text/javascript>
+	var b1 = window.prompt("Digite a primeira nota:");
+	var b2 = window.prompt("Digite a segunda nota:");
+	var b3 = window.prompt("Digite a terceira nota:");
+	var b4 = window.prompt("Digite a quarta nota:");
+	var resultado = (parseInt(b1) + parseInt(b2) + parseInt(b3) + parseInt(b4)) / 4;
+	
+	if (resultado <= 5){
+				alert ("Aluno tomou bomba!!!");
+			} else if ((resultado => 5) && (resultado < 6.1)){
+				alert ("aluno esta de recuperacao!!!");			
+			} else if ((resultado >= 6.1) && (resultado < 9.9)){
+				alert ("Aluno passou!");
+			} else {
+				alert ("flawless victory!!!");
+			}
+		
+	
+</script>
+</head>
+<body>
+		<h1>If e else</h1>
+</body>
+</html>
+
+====================================================================================================================
+
+<html>
+<head>
+	<title>evento onclick e onload</title>
+<script type=text/javascript>
+		function escrever(){
+			var nome = window.prompt('digite seu nome');
+			alert(nome);
+		}
+</script>
+</head>
+<body onload="escrever();">
+	<h1 onclick="escrever();"> Clique aqui e digite seu nome </h1>	
+</body>
+</html>
+
+====================================================================================================================
+
+<html>
+<head>
+	<title>API DOM</title>
+<script type="text/javascript">
+	function mask_date(){
+		var n_char = document.getElementById("txtdata").value.length;
+		if (n_char == 2){
+		document.getElementById("txtdata").value = document.getElementById("txtdata").value + "/";
+		}
+		if (n_char == 5){
+		document.getElementById("txtdata").value = document.getElementById("txtdata").value + "/";
+		}
+	}
+	
+	function mask_cep(){
+		var c_char = document.getElementById("cepdata").value.length;
+		if (c_char == 5){
+		document.getElementById("cepdata").value = document.getElementById("cepdata").value + "-";
+		}
+	}
+	
+	// função feita da minha maneira, mas dá pra ser melhor! :P
+	//function mask_tel_ddd(){
+	//	var t_char = document.getElementById("teldata").value.length;
+	//	if (t_char == 0){
+	//	document.getElementById("teldata").value = document.getElementById("teldata").value + "(";
+	//	}
+	//}
+	// o trecho final do campo celular foi ignorado também: onkeypress="mask_tel_ddd();"/> 
+	
+	//aqui está do jeito que está na aula (achei melhor)
+	function mask_tel(){
+		var t_char = document.getElementById("teldata").value.length;
+		if (t_char == 2){
+		document.getElementById("teldata").value = "(" + document.getElementById("teldata").value + ") ";
+		}
+		if (t_char == 10){
+		document.getElementById("teldata").value = document.getElementById("teldata").value + "-";
+		}
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+	<h3>Cadastro</h3>
+	nome: <input type="text"/>
+	<br></br>
+	Data de Nascimento: <input type="text" id="txtdata" maxlength="10" onkeyup="mask_date();"/>
+	<br></br>
+	CEP: <input type="text" id="cepdata" maxlength="9" onkeyup="mask_cep();"/>
+	<br></br>
+	Celular: (com 9) <input type="text"id="teldata" maxlength="15" onkeyup="mask_tel();" /> 
+	<input type="button" value="Cadastrar">
+</body>
+</html>
+====================================================================================================================
+<html>
+<head>
+	<title>Funcoes externas e FOR</title>
+<script type="text/javascript" src="functions.js"></script>
+
+<script type="text/javascript">
+	for(var i = 0; i < 10 ; i++){
+	alert (i);
+	}
+	
+</script>
+</head>
+<body>
+	<h3>Cadastro</h3>
+	nome: <input type="text"/>
+	<br></br>
+	Data de Nascimento: <input type="text" id="txtdata" maxlength="10" onkeyup="mask_date();"/>
+	<br></br>
+	CEP: <input type="text" id="cepdata" maxlength="9" onkeyup="mask_cep();"/>
+	<br></br>
+	Celular: (com 9) <input type="text"id="teldata" maxlength="15" onkeyup="mask_tel();" /> 
+	<input type="button" value="Cadastrar">
+</body>
+</html>
+====================================================================================================================
+<html>
+<head>
+	<title>OnMouseOver, OnMouseOut e while</title>
+<script type="text/javascript" src="functions.js"></script>
+
+<script type="text/javascript">
+	/*var sorte = 30;
+	var numero = 0;
+	while (numero != sorte){
+		numero = window.prompt("digite o numero da sorte!");
+	}
+	alert("acertou miseravi!!!");
+	*/
+	function changephoto2(){
+		document.getElementById("foto").setAttribute("src", "imagens/imagem2.jpg");
+	}
+	function changephoto1(){
+		document.getElementById("foto").setAttribute("src", "imagens/imagem.jpg");
+	}
+	
+</script>
+</head>
+<body>
+	<img src="imagens/imagem.jpg" width="250" height="250" id="foto" onmouseover="changephoto2();" onmouseout="changephoto1();">
+</body>
+</html>
+
+====================================================================================================================
+
+<html>
+<head>
+	<title>calculadora</title>
+	<script type=text/javascript>
+	function mais(){	
+	var n1 = document.getElementById("txtN1").value;
+	var n2 = document.getElementById("txtN2").value;
+	resultado = parseInt(n1) + parseInt(n2);
+	document.getElementById("txtResultado").value = resultado;
+	document.getElementById("txtresultado2").innerHTML = "Resultado = " + resultado;
+	}
+	function menos(){
+	var n1 = document.getElementById("txtN1").value;
+	var n2 = document.getElementById("txtN2").value;
+	resultado = parseInt(n1) - parseInt(n2);
+	document.getElementById("txtResultado").value = resultado;
+	document.getElementById("txtresultado2").innerHTML = "Resultado = " + resultado;
+	}
+	function multi(){
+	var n1 = document.getElementById("txtN1").value;
+	var n2 = document.getElementById("txtN2").value;
+	resultado = parseInt(n1) * parseInt(n2);
+	document.getElementById("txtResultado").value = resultado;
+	document.getElementById("txtresultado2").innerHTML = "Resultado = " + resultado;
+	}
+	function divide(){
+	var n1 = document.getElementById("txtN1").value;
+	var n2 = document.getElementById("txtN2").value;
+	resultado = parseInt(n1) / parseInt(n2);
+	document.getElementById("txtResultado").value = resultado;
+	document.getElementById("txtresultado2").innerHTML = "Resultado = " + resultado;
+	}
+	
+	
+	</script>
+</head>
+<body>
+<p id="demo"></p>
+<button onclick="myFunction()">vai!</button>
+
+	<h3>Calculadora</h3>
+	Numero 1: <input type="text" id="txtN1"/>
+	<br></br>
+	Numero 2: <input type="text" id="txtN2"/>
+	<br></br>
+	Resultado: <input type="text" id="txtResultado"/>
+	<br></br>
+	<input type="button" value="+" onclick="mais();">
+	<input type="button" value="-"onclick="menos();">
+	<input type="button" value="*"onclick="multi();">
+	<input type="button" value="/"onclick="divide();">
+	<h2 id="txtresultado2">Resultado:</h2>
+</body>
+</html>
+====================================================================================================================
+<html>
+<head>
+	<title>Hello World JQuery</title>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<script type=text/javascript>
+	$(document).ready(function(){
+	alert("ola mundo em jquery!");
+	});
+	</script>
+</head>
+<body>
+</body>
+</html>
+====================================================================================================================

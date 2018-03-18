@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>calculadora</title>
+	<script type=text/javascript>
+	function mais(){	
+	var n1 = document.getElementById("txtN1").value;
+	var n2 = document.getElementById("txtN2").value;
+	resultado = parseInt(n1) + parseInt(n2);
+	document.getElementById("txtResultado").value = resultado;
+	document.getElementById("txtresultado2").innerHTML = "Resultado = " + resultado;
+	}
+	function menos(){
+	var n1 = document.getElementById("txtN1").value;
+	var n2 = document.getElementById("txtN2").value;
+	resultado = parseInt(n1) - parseInt(n2);
+	document.getElementById("txtResultado").value = resultado;
+	document.getElementById("txtresultado2").innerHTML = "Resultado = " + resultado;
+	}
+	function multi(){
+	var n1 = document.getElementById("txtN1").value;
+	var n2 = document.getElementById("txtN2").value;
+	resultado = parseInt(n1) * parseInt(n2);
+	document.getElementById("txtResultado").value = resultado;
+	document.getElementById("txtresultado2").innerHTML = "Resultado = " + resultado;
+	}
+	function divide(){
+	var n1 = document.getElementById("txtN1").value;
+	var n2 = document.getElementById("txtN2").value;
+	resultado = parseInt(n1) / parseInt(n2);
+	document.getElementById("txtResultado").value = resultado;
+	document.getElementById("txtresultado2").innerHTML = "Resultado = " + resultado;
+	}
+	
+	
+	</script>
+</head>
+<body>
+<p id="demo"></p>
+<button onclick="myFunction()">vai!</button>
+
+	<h3>Calculadora</h3>
+	Numero 1: <input type="text" id="txtN1"/>
+	<br></br>
+	Numero 2: <input type="text" id="txtN2"/>
+	<br></br>
+	Resultado: <input type="text" id="txtResultado"/>
+	<br></br>
+	<input type="button" value="+" onclick="mais();">
+	<input type="button" value="-"onclick="menos();">
+	<input type="button" value="*"onclick="multi();">
+	<input type="button" value="/"onclick="divide();">
+	<h2 id="txtresultado2">Resultado:</h2>
+</body>
+</html>

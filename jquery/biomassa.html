@@ -1,0 +1,230 @@
+====================================================================================================================
+<html>
+<head>
+	<title>Hello World JQuery</title>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<script type=text/javascript>
+	$(document).ready(function(){
+	alert("ola mundo em jquery!");
+	});
+	</script>
+</head>
+<body>
+</body>
+</html>
+====================================================================================================================
+<html>
+<head>
+	<title>click e slideUp</title>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<script type=text/javascript>
+	$(document).ready(function(){
+		$("#imag").click(function(){
+			$(this).slideUp();	
+			$(this).slideDown();
+		});
+			$("h1").click(function(){
+			$(this).slideUp();
+			$(this).slideDown();
+		});
+	});
+	</script>
+</head>
+<body>
+	<img src="imagens/imagem.jpg" width="250" height="250"id="imag" >
+	<p>Resultado 10 + 10 = 20</p>
+	<p>Resultado 20 + 20 = 40</p>
+	<h1>teste</h1>
+</body>
+</html>
+====================================================================================================================
+<html>
+<head>
+	<title>FadeIn e fadeOut</title>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<script type=text/javascript>
+	$(document).ready(function(){
+	
+		$("#im").click(function(){
+			$(this).fadeOut(500, function(){
+				
+				$(this).fadeTo( "slow", 0.33 );
+			});
+			
+			
+			//$(this).fadeIn(5000);
+		});
+		
+				$("#im2").click(function(){
+					$(this).fadeOut("slow");
+					$(this).fadeIn("slow");
+				});
+	});
+	</script>
+</head>
+<body>
+	<h1>Teste fadein e fadeout</h1>
+	<img src="imagens/imagem.jpg" width="250" height="250"id="im"><br></br>
+	<img src="imagens/imagem2.jpg" width="250" height="250"id="im2">
+</body>
+</html>
+====================================================================================================================
+<html>
+<head>
+	<title>Keypress, focus, val e Keyup</title>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<script type=text/javascript>
+	$(document).ready(function(){
+
+		$("#txtFone").keypress(function (e){
+			if(e.which == 13){
+			$("#txtData").focus();
+			}
+		})
+
+		$("#txtFone").keyup(function (){
+			alert($("#txtFone").val());
+		});
+	});
+	</script>
+</head>
+<body>
+	Telefone: <input type="text" id="txtFone"><br></br>
+	Data: <input type="text" id="txtData">
+</body>
+</html>
+====================================================================================================================
+
+<html>
+<head>
+	<title>change, text, attr</title>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<script type=text/javascript>
+	$(document).ready(function(){
+
+		$("#txtFone").keypress(function (e){
+			if(e.which == 13){
+			$("#txtData").focus();
+			}
+		})
+
+		$("#txtData").keyup(function (){
+			if ($("#txtData").val().length == 2){
+				$("#txtData").val($("#txtData").val() + "/");
+			} else if ($("#txtData").val().length == 5){
+				$("#txtData").val($("#txtData").val() + "/");
+			}
+		}); 
+	
+	$("#cores").change(function(){
+		$("select option:selected").each(function(){
+			if($(this).text() == "Azul"){
+				$("#img_sapato").attr("src", "imagens/azul.jpg");
+			}else if($(this).text() == "Verde"){
+				$("#img_sapato").attr("src", "imagens/verde.jpg");
+			}else if($(this).text() == "Amarelo"){
+				$("#img_sapato").attr("src", "imagens/amarelo.jpg");
+			}else if($(this).text() == "Cinza"){
+				$("#img_sapato").attr("src", "imagens/cinza.jpg");
+			}
+		});
+		
+	});
+	
+	});
+	</script>
+</head>
+<body>
+	Telefone: <input type="text" id="txtFone"><br></br>
+	Data: <input type="text" id="txtData" maxlength="10">
+	<select id="cores"> 
+	<option>Azul</option>
+	<option>Verde</option>
+	<option>Amarelo</option>
+	<option>Cinza</option>
+	</select>
+	<br>
+	<h3 id="resultado">Cor selecionada:</h3>
+	<img id="img_sapato" src="imagens/azul.jpg" width="320" height="240">
+</body>
+</html>
+====================================================================================================================
+
+<html>
+<head>
+	<title>Empty e Slidedown</title>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<script type=text/javascript>
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+			$("#logo").show();
+		})
+		$("#btn2").click(function(){
+			$("#logo").hide();
+		})
+		
+		$("#btn3").click(function(){
+			if ($(this).val() == "+"){
+				$("#slide").slideDown();
+				$(this).val("-");
+			}else{
+				$("#slide").slideUp();
+				$(this).val("+");
+			}
+		})
+		
+	});
+	</script>
+</head>
+<body>
+	<p id="slide">Exemplo slidedown</p>
+	
+	<input id="btn3" type="button" value="-">
+	<br><br><br>
+	<p contenteditable="true">Jquery</p>
+	<img id ="logo" src="http://s3-us-west-2.amazonaws.com/hypebeast-wordpress/image/2013/03/mastermind-japan-loses-exclusive-rights-to-skull-logo-0.jpg"><br>
+	<input id="btn1" type="button" value="Exibir">
+	<input id="btn2" type="button" value="Ocultar">
+</body>
+</html>
+
+====================================================================================================================
+
+<html>
+<head>
+	<title>Animate</title>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	
+	
+<script type=text/javascript>
+	$(document).ready(function(){
+		$("#animar").click(function(){
+			$("#exemplo").animate({
+			Width: "80%",
+			marginLeft: "0.9",
+			fontSize: "50px",
+			borderWidth: "20px"}, 2000);	
+		});	
+		
+		$("#animar2").click(function(){
+			$("#exemplo3").animate({
+			fontSize:"+=5px"}, 2000);	
+		});	
+		
+	});
+	</script>
+</head>
+<body>
+	<div id="exemplo" style="width:200px;height:150px;border: 1px solid #c0c0c0;background-color:#FF0000">
+	</div>
+	<p id="exemplo2">MEU TEXTO</p>
+	<input type="button" value="animar" id="animar">
+	
+	<p id="exemplo3">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+	
+	<input type="button" value="zoom" id="animar2">
+</body>
+</html>
+
+====================================================================================================================
+
